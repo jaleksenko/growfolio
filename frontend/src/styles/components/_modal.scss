@@ -1,0 +1,93 @@
+// frontend/src/styles/components/_modal.scss
+@use "../abstracts/variables" as vars;
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.2s ease-out;
+}
+
+.modal {
+  background-color: vars.$white-color;
+  border-radius: vars.$border-radius;
+  padding: vars.$spacing-xl vars.$spacing-l;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: vars.$elevation-3;
+
+  display: flex;
+  flex-direction: column;
+  gap: vars.$spacing-m;
+
+  h3 {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: vars.$text-color;
+  }
+
+  .modal__input {
+    width: 100%;
+    padding: vars.$spacing-s;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: #fdfdfd;
+    transition: border-color 0.2s;
+
+    &:focus {
+      outline: none;
+      border-color: vars.$secondary-color;
+    }
+  }
+
+  .modal__actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: vars.$spacing-m;
+
+    button {
+      padding: 8px 14px;
+      font-size: 14px;
+      font-weight: 500;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.2s;
+
+      &.cancel {
+        background-color: #e2e2e2;
+        color: #444;
+
+        &:hover {
+          background-color: #d0d0d0;
+        }
+      }
+
+      &.confirm {
+        background-color: vars.$primary-color;
+        color: vars.$white-color;
+
+        &:hover {
+          background-color: vars.$primary-color-hover;
+        }
+      }
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

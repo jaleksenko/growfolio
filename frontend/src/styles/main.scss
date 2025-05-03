@@ -1,0 +1,34 @@
+// src/styles/main.scss
+
+// Abstracts
+@use './abstracts/variables' as *;
+@use './abstracts/mixins' as *;
+@use './abstracts/functions' as *;
+
+// Base
+@use './base/reset' as *;
+@use './base/typography' as *;
+@use './base/base' as *;
+
+// Components
+@use './components/buttons' as *;
+@use './components/cards' as *;
+@use './components/forms' as *;
+@use './components/messages' as *;
+@use './components/formMessages' as *;
+@use './components/navbar' as *;
+@use './components/validation' as *;
+@use './components/search' as *;
+@use './components/watchlist' as *;
+@use './components/modal' as *;
+@use './components/portfolio' as *;
+@use './components/chart' as *;
+
+// Layouts
+@use './layouts/header' as *;
+@use './layouts/footer' as *;
+@use './layouts/grid' as *;
+
+// Pages
+@use './pages/dashboard' as *;
+@use './pages/homepage' as *;

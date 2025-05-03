@@ -1,0 +1,35 @@
+// src/styles/components/_messages.scss
+
+@use "../abstracts/variables" as vars;
+
+// Container for all messages
+.message-container {
+  text-align: center;
+  margin-top: vars.$spacing-m; // Use spacing-m from variables
+}
+
+// Base styles for all messages
+.message {
+  font-size: vars.$base-font-size; // Use base font size from variables
+  margin: vars.$spacing-s 0; // Vertical spacing for messages
+  text-align: center;
+
+  &--error {
+    color: vars.$error-color; // Error color from your variables (likely red)
+  }
+
+  &--success {
+    color: vars.$success-color; // Success color from your variables (likely green)
+    
+    strong {
+      font-weight: bold; // Make the email bold in success messages
+    }
+  }
+}
+
+// Additional styling for reset links (if needed)
+.reset-link {
+  text-align: center;
+  margin-top: vars.$spacing-s;
+  font-size: vars.$base-font-size;
+}

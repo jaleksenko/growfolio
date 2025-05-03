@@ -1,0 +1,44 @@
+// src/styles/layouts/_header.scss
+
+@use "../abstracts/variables" as vars;
+
+.top-menu {
+  width: 100%;
+  max-width: 1200px; // Ensure the header doesn't exceed dashboard width
+  background-color: vars.$white-color;
+  padding: vars.$spacing-m;
+  box-shadow: 0 4px 6px vars.$box-shadow-color;
+  display: flex;
+  justify-content: space-between; // Keep links and username at edges
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto; // Center the header
+}
+
+.user-info {
+  font-size: 18px; // Font size for the username
+  font-weight: bold; // Bold font for emphasis
+  margin-left: auto;
+  margin-right: vars.$spacing-l; // Space to the right of the username
+}
+
+.menu-links {
+  display: flex;
+  align-items: center; // Center links vertically
+  gap: vars.$spacing-m; // Space between links
+}
+
+.menu-link {
+  color: vars.$link-color;
+  text-decoration: none;
+  padding: vars.$spacing-s vars.$spacing-m;
+  border-radius: 20px;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.menu-link-danger {
+  color: vars.$danger-color;
+}

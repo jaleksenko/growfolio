@@ -1,0 +1,63 @@
+// src/styles/abstracts/_variables.scss
+
+@use "sass:color"; // Sass color functions
+
+// 🎨 Color Palette
+$primary-color: #4caf50;
+$primary-color-hover: color.adjust($primary-color, $lightness: -10%);
+
+$secondary-color: #007aff;
+$secondary-color-hover: color.adjust($secondary-color, $lightness: -10%);
+
+$danger-color: #dc3545;
+$danger-color-hover: color.adjust($danger-color, $lightness: -10%);
+$success-color: #28a745;
+$error-color: $danger-color;
+
+$social-color: #4285f4;
+$social-color-hover: color.adjust($social-color, $lightness: -10%);
+
+$white-color: #ffffff;
+$background-color: #eceef0; // Soft Apple-like background
+$panel-background-color: #eceef0; // For containers (e.g., watchlist)
+// $panel-background-color: #f7f8fa; // For containers (e.g., watchlist)
+$card-background-color: #ffffff; // For chart, table surfaces
+$box-shadow-color: rgba(0, 0, 0, 0.06);
+
+// Text + iconography
+$text-color: #1c1c1e;
+$icon-color: $primary-color;
+$icon-color-hover: color.adjust($icon-color, $lightness: -10%);
+$text-muted: #6c757d; 
+
+// Tables
+$alternative-rows-color: #f7faff;
+
+// Links
+$link-color: $secondary-color;
+$link-hover-color: $secondary-color-hover;
+
+// 🧑‍💻 Typography
+$base-font-size: 16px;
+$base-font-family: 'Arial', sans-serif;
+$heading-font-family: 'SF Pro Display', 'Roboto', sans-serif;
+
+// 📐 Spacing
+$spacing-xs: 5px;
+$spacing-s: 10px;
+$spacing-m: 15px;
+$spacing-l: 20px;
+$spacing-xl: 30px;
+
+// 🧩 Components
+$border-radius: 16px;
+
+// ⌘ Navbar
+$navbar-background-color: rgba(248, 249, 251, 0.85);
+$navbar-border-color: rgba(0, 0, 0, 0.05);
+$navbar-blur: blur(8px);
+
+// 🔲 Elevation
+$elevation-1: 0 1px 4px rgba(0, 0, 0, 0.04);
+$elevation-2: 0 2px 8px rgba(0, 0, 0, 0.06);
+$elevation-3: 0 4px 16px rgba(0, 0, 0, 0.08);

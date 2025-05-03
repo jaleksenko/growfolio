@@ -1,0 +1,107 @@
+@use "sass:color";
+@use "../abstracts/variables" as vars;
+
+.home-page {
+  background-color: vars.$background-color;
+  font-family: vars.$base-font-family;
+  color: vars.$text-color;
+  padding: vars.$spacing-xl;
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .hero-section {
+    text-align: center;
+    margin-bottom: vars.$spacing-xl;
+
+    .hero-content {
+      max-width: 700px;
+      margin: 0 auto;
+
+      .hero-title {
+        font-family: vars.$heading-font-family;
+        font-size: 3rem;
+        font-weight: 700;
+        background: linear-gradient(90deg, #007aff, #4f8cff);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        color: transparent;
+        margin-bottom: vars.$spacing-xs;
+        letter-spacing: 0.4px;
+        text-shadow:
+          0 0 6px rgba(0, 122, 255, 0.1),
+          0 0 12px rgba(0, 122, 255, 0.08);
+      }
+
+      .hero-subtitle {
+        font-size: 1.3rem;
+        color: #000;
+        font-weight: 400;
+        margin-bottom: vars.$spacing-l;
+      }
+    }
+  }
+
+  .info-cards {
+    display: flex;
+    justify-content: space-around;
+    gap: vars.$spacing-l;
+    margin-bottom: vars.$spacing-xl;
+    flex-wrap: wrap;
+
+    .card {
+      background-color: vars.$card-background-color;
+      padding: vars.$spacing-m;
+      border-radius: vars.$border-radius;
+      box-shadow: vars.$elevation-1;
+      flex: 1;
+      max-width: 300px;
+      text-align: center;
+
+      .card-icon {
+        font-size: 3rem;
+        color: vars.$primary-color;
+        margin-bottom: vars.$spacing-s;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+        margin-bottom: vars.$spacing-xs;
+        font-weight: bold;
+        color: vars.$text-color;
+      }
+
+      p {
+        font-size: 1rem;
+        color: #666;
+      }
+    }
+  }
+
+  .features {
+    display: flex;
+    flex-direction: column;
+    gap: vars.$spacing-xl;
+
+    .feature {
+      border-left: 4px solid vars.$primary-color;
+      padding-left: vars.$spacing-l;
+      margin-bottom: vars.$spacing-l;
+
+      h3 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: #000;
+        margin-bottom: vars.$spacing-xs;
+      }
+
+      p {
+        font-size: 1.1rem;
+        color: #555;
+        line-height: 1.6;
+      }
+    }
+  }
+}

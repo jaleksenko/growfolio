@@ -1,0 +1,30 @@
+// src/styles/abstracts/_mixins.scss
+
+@use "../abstracts/variables" as vars;
+
+// Mixin for flexbox center alignment (only horizontal centering)
+@mixin flex-center {
+  display: flex;
+  justify-content: center; // Only horizontal centering
+}
+
+// Mixin for a standard button style
+@mixin button-style($bg-color, $hover-color, $text-color: vars.$white-color) {
+  background-color: $bg-color;
+  color: $text-color;
+  padding: vars.$spacing-s vars.$spacing-m;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: vars.$spacing-xs;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: $hover-color;
+  }
+}

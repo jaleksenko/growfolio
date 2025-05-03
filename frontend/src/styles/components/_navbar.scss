@@ -1,0 +1,89 @@
+// src/styles/components/_navbar.scss
+@use "../abstracts/variables" as vars;
+
+.navbar {
+  background-color: vars.$navbar-background-color;
+  backdrop-filter: vars.$navbar-blur;
+  border-bottom: 1px solid vars.$navbar-border-color;
+  padding: vars.$spacing-s vars.$spacing-l;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  transition: background-color 0.3s ease;
+
+  .navbar__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .navbar__left {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    margin-right: vars.$spacing-l;
+  }
+
+  .navbar__center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: vars.$spacing-l;
+    flex: 1;
+  }
+
+  .navbar__right {
+    display: flex;
+    align-items: center;
+    gap: vars.$spacing-m;
+  }
+
+  .navbar__logo {
+    display: flex;
+    align-items: center;
+
+    img {
+      height: 18px;
+      width: auto;
+      display: block;
+    }
+  }
+
+  .navbar__link {
+    text-decoration: none;
+    font-size: 0.95rem;
+    color: vars.$link-color;
+    font-weight: 500;
+    padding: 4px 6px;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: vars.$link-hover-color;
+      text-decoration: underline;
+    }
+  }
+
+  .navbar__user-info {
+    color: vars.$primary-color;
+    font-weight: 600;
+    font-size: 0.95rem;
+  }
+
+  .navbar__signout {
+    background: none;
+    border: none;
+    color: vars.$danger-color;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 4px 6px;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: vars.$danger-color-hover;
+      text-decoration: underline;
+    }
+  }
+}

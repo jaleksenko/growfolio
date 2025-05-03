@@ -1,0 +1,36 @@
+// frontend/src/styles/components/_portfolioInsights.scss
+@use "../../styles/abstracts/variables" as vars;
+
+.portfolio-insight {
+  background-color: vars.$white-color;
+  border-radius: vars.$border-radius;
+  padding: vars.$spacing-m;
+  font-size: 1rem;
+  color: vars.$text-color;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  line-height: 1.5;
+
+  &__block {
+    margin-bottom: vars.$spacing-m;
+
+    p {
+      margin: 0 0 vars.$spacing-xs 0;
+    }
+  }
+
+  &__divider {
+    height: 1px;
+    background-color: vars.$border-color-light;
+    margin: 0 0 vars.$spacing-m 0;
+  }
+
+  &__footer {
+    font-size: 0.8rem;
+    color: vars.$text-muted;
+    text-align: right;
+    margin-top: auto;
+  }
+}

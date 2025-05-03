@@ -1,0 +1,109 @@
+// frontend/src/styles/components/_buttons.scss
+@use "sass:color";
+@use "../abstracts/variables" as vars;
+
+.button {
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  max-width: 400px;
+  width: 100%;
+
+  &--primary {
+    background-color: vars.$primary-color;
+    color: vars.$white-color;
+    border: none;
+
+    &:hover {
+      background-color: vars.$primary-color-hover;
+    }
+
+    &:disabled {
+      background-color: color.adjust(vars.$primary-color, $lightness: 30%);
+      cursor: not-allowed;
+    }
+  }
+
+  &--secondary {
+    background-color: vars.$secondary-color;
+    color: vars.$white-color;
+    border: none;
+
+    &:hover {
+      background-color: vars.$secondary-color-hover;
+    }
+
+    &:disabled {
+      background-color: color.adjust(vars.$secondary-color, $lightness: 30%);
+      cursor: not-allowed;
+    }
+  }
+
+  &--google {
+    background-color: vars.$social-color;
+    color: vars.$white-color;
+    border: none;
+
+    &:hover {
+      background-color: vars.$social-color-hover;
+    }
+
+    &:disabled {
+      background-color: color.adjust(vars.$social-color, $lightness: 30%);
+      cursor: not-allowed;
+    }
+  }
+
+  &--apple {
+    background-color: #000;
+    color: vars.$white-color;
+    border: none;
+
+    &:hover {
+      background-color: color.adjust(#000, $lightness: -10%);
+    }
+
+    &:disabled {
+      background-color: color.adjust(#000, $lightness: 30%);
+      cursor: not-allowed;
+    }
+  }
+
+  &--icon {
+    background-color: transparent;
+    border: none;
+    padding: 5px;
+
+    &:hover {
+      background-color: vars.$icon-color-hover;
+    }
+
+    &:disabled {
+      background-color: transparent;
+      cursor: not-allowed;
+    }
+  }
+
+  &--danger {
+    background-color: vars.$danger-color;
+    color: vars.$white-color;
+    border: none;
+
+    &:hover {
+      background-color: vars.$danger-color-hover;
+    }
+
+    &:disabled {
+      background-color: color.adjust(vars.$danger-color, $lightness: 30%);
+      cursor: not-allowed;
+    }
+  }
+
+  &__icon {
+    margin-right: 5px;
+  }
+}

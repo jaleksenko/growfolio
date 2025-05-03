@@ -1,0 +1,2 @@
+GET https://api.twelvedata.com/time_series?start_date=2020-05-06&outputsize=5&symbol=aapl&interval=1day&apikey=800f019205e249cea8d0c43a8ff9b8b1
+

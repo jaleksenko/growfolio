@@ -1,0 +1,49 @@
+// src/styles/base/_base.scss
+@use '../abstracts/variables' as vars;
+
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+  background-color: vars.$background-color;
+}
+
+body {
+  font-size: vars.$base-font-size;
+  font-family: vars.$base-font-family;
+  background-color: vars.$background-color;
+  color: vars.$text-color;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: vars.$heading-font-family;
+  // margin-bottom: vars.$spacing-m;
+  color: #111;
+}
+
+a {
+  color: vars.$link-color;
+  text-decoration: none;
+  transition: color 0.2s;
+
+  &:hover {
+    color: vars.$link-hover-color;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+input, button, select, textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}

@@ -1,0 +1,29 @@
+// src/styles/components/_validation.scss
+
+@use "../abstracts/variables" as vars;
+
+.validation {
+  &__text {
+    margin-bottom: vars.$spacing-xs; // Reduce the spacing here if needed
+  }
+
+  &__list {
+    list-style: none;
+    padding: 0;
+    margin: 0; // Remove default margin for list
+  }
+
+  &__item {
+    margin-bottom: vars.$spacing-xs; // Reduce space between items
+    padding: 0; // Remove padding if any
+    color: vars.$error-color; // Red by default for invalid
+
+    &.valid {
+      color: vars.$success-color; // Green when valid
+    }
+
+    &.invalid {
+      color: vars.$error-color; // Red when invalid
+    }
+  }
+}

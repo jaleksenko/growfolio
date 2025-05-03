@@ -1,0 +1,45 @@
+[tool.poetry]
+name = "growfolio"
+version = "0.1.0"
+description = "A web application for predicting stock trends using machine learning."
+authors = ["Juri Aleksenko <juri.aleksenko@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.13"
+fastapi = "^0.115.5"
+sqlalchemy = "^2.0.36"
+uvicorn = "^0.32.0"
+alembic = "^1.14.0"
+python-dotenv = "^1.0.1"
+python-jose = "^3.3.0"
+passlib = "^1.7.4"
+python-multipart = "^0.0.17"
+bcrypt = "^4.2.0"
+flake8 = "^7.1.1"
+email-validator = "^2.2.0"
+redis = "^5.2.0"
+jinja2 = "^3.1.4"
+twelvedata = "^1.2.24"
+sqlmodel = "^0.0.22"
+greenlet = "^3.1.1"
+urllib3 = "^2.2.3"
+pydantic-core = "^2.27.0"
+pydantic = "^2.9.2"
+pyjwt = "^2.9.0"
+argon2-cffi = "^23.1.0"
+watchdog = "^6.0.0"
+psycopg = {extras = ["binary"], version = "^3.2.3"}
+debugpy = "^1.8.9"
+httpx = "^0.28.0"
+aioredis = "^2.0.1"
+setuptools = "^76.0.0"
+
+
+[tool.poetry.group.dev.dependencies]
+flake8 = "^7.1.1"
+pytest = "^8.3.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

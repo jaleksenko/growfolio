@@ -1,0 +1,30 @@
+stages:
+  - build-backend
+
+build-backend:
+  stage: build-backend
+  variables:
+    VITE_BASE_URL: "$VITE_BASE_URL"
+    POSTGRES_USER: "$POSTGRES_USER"
+    POSTGRES_PASSWORD: "$POSTGRES_PASSWORD"
+    POSTGRES_DB: "$POSTGRES_DB"
+    RDS_ENDPOINT: "$RDS_ENDPOINT"
+    DATABASE_URL: "postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@${RDS_ENDPOINT}:5432/${POSTGRES_DB}"
+    REDIS_URL: "$REDIS_URL"
+    CELERY_BROKER_URL: "$CELERY_BROKER_URL"
+    CELERY_BACKEND_URL: "$CELERY_BACKEND_URL"
+    SECRET_KEY: "$SECRET_KEY"
+    ALGORITHM: "$ALGORITHM"
+    ACCESS_TOKEN_EXPIRE_HOURS: "$ACCESS_TOKEN_EXPIRE_HOURS"
+    SMTP_SERVER: "$SMTP_SERVER"
+    SMTP_PORT: "$SMTP_PORT"
+    SMTP_USERNAME: "$SMTP_USERNAME"
+    SMTP_PASSWORD: "$SMTP_PASSWORD"
+    TWELVE_DATA_API_KEY: "$TWELVE_DATA_API_KEY"
+    TWELVE_DATA_API_URL: "$TWELVE_DATA_API_URL"
+    TWELVE_DATA_WS_URL: "$TWELVE_DATA_WS_URL"
+  script:
+    - git pull origin main
+    - docker compose -f docker-compose.prod.yaml up --build --remove-orphans -d
+  only:
+    - main

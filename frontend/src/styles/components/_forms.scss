@@ -1,0 +1,136 @@
+// frontend/src/styles/components/_form.scss
+
+@use "../abstracts/variables" as vars;
+
+.form {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  &__box {
+    background-color: vars.$white-color;
+    padding: vars.$spacing-l;
+    border-radius: 20px;
+    box-shadow: 0 4px 6px vars.$box-shadow-color;
+    max-width: 400px;
+    width: 100%;
+  }
+
+  &__title {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: vars.$spacing-m;
+  }
+
+  &__actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: vars.$spacing-m;
+
+    .form__link {
+      color: vars.$link-color;
+      text-decoration: underline;
+      cursor: pointer;
+      background: none;
+      border: none;
+
+      &:hover {
+        text-decoration: none;
+      }
+
+      &--danger {
+        color: red;
+      }
+    }
+  }
+
+  &__button-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: vars.$spacing-xs;
+
+    button {
+      margin-bottom: vars.$spacing-xs;
+    }
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: vars.$spacing-s;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    & .form__icon {
+      margin-right: 4px;
+    }
+
+    &:hover {
+      background-color: vars.$primary-color-hover;
+    }
+  }
+
+  &__group {
+    margin-bottom: vars.$spacing-m;
+
+    label {
+      font-weight: bold;
+      margin-bottom: vars.$spacing-xs;
+      display: block;
+    }
+
+    input {
+      width: 100%;
+      padding: vars.$spacing-s;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+      background-color: #f9f9f9;
+      color: #333;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+
+      &:focus {
+        border-color: vars.$primary-color;
+        box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+        outline: none;
+      }
+    }
+  }
+
+  &__links {
+    margin-top: vars.$spacing-m;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: vars.$spacing-xs;
+
+    .form__link {
+      color: vars.$link-color;
+      text-decoration: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+
+      &:hover {
+        text-decoration: underline;
+      }
+
+      &--danger {
+        color: red;
+      }
+    }
+  }
+
+  &__message {
+    color: red;
+    margin-top: vars.$spacing-s;
+    text-align: center;
+  }
+}

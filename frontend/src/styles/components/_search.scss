@@ -1,0 +1,86 @@
+@use "sass:color";
+@use "../abstracts/variables" as vars;
+
+.search {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  max-width: 35rem;
+  margin: 0 auto;
+
+  &__tabs {
+    display: flex;
+    gap: vars.$spacing-xs;
+  }
+
+  &__tab {
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    color: vars.$link-color;
+    font-weight: normal;
+    text-decoration: none;
+    border-radius: 0.5rem;
+    transition: color 0.2s, background-color 0.2s;
+
+    &:hover {
+      color: vars.$link-hover-color;
+      font-weight: bold;
+    }
+
+    &.active {
+      font-weight: bold;
+      color: vars.$secondary-color;
+      background-color: color.adjust(vars.$secondary-color, $lightness: 45%);
+    }
+  }
+
+  &__input {
+    width: 100%;
+    padding: 0.65rem 1rem;
+    font-size: 1.125rem;
+    border: 1px solid vars.$secondary-color;
+    border-radius: 1rem;
+    background-color: color.adjust(vars.$background-color, $lightness: 10%);
+    color: black;
+
+    &:focus {
+      outline: none;
+      border: 2px solid vars.$secondary-color;
+      box-shadow: 0 0 0.3rem rgba(0, 123, 255, 0.5);
+    }
+  }
+
+  &__dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    max-height: calc(5 * 2.25rem);
+    overflow-y: auto;
+    background-color: vars.$white-color;
+    border: 1px solid vars.$box-shadow-color;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.25rem 0.5rem vars.$box-shadow-color;
+    z-index: 10;
+  }
+
+  &__dropdown-item {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    line-height: 2.25rem;
+    color: black;
+    cursor: pointer;
+
+    &:hover {
+      background-color: color.adjust(vars.$background-color, $lightness: -5%);
+    }
+  }
+
+  &__no-data {
+    margin-top: 0.5rem;
+    font-size: 1rem;
+    color: vars.$danger-color;
+    text-align: center;
+  }
+}

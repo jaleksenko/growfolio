@@ -1,0 +1,25 @@
+# Node / React / Frontend
+node_modules/
+dist/
+build/
+.vite/
+
+# Python / Backend
+__pycache__/
+*.py[cod]
+*.egg-info/
+.env
+.env.*
+*.log
+
+# Docker
+*.pid
+docker-compose.override.yml
+
+# System
+.DS_Store
+.idea/
+.vscode/
+
+# OS files
+Thumbs.db

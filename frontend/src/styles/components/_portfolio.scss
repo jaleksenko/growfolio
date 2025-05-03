@@ -1,0 +1,120 @@
+// frontend/src/styles/components/_portfolio.scss
+@use "sass:color";
+@use "../abstracts/variables" as vars;
+
+.portfolio {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  margin: vars.$spacing-s auto;
+  gap: vars.$spacing-m;
+
+  // Compact adjustments (keep width, remove excess space)
+  &.compact {
+    padding-top: 0;
+    padding-bottom: 0;
+    gap: vars.$spacing-s;
+
+    .portfolio__title,
+    .portfolio__search {
+      display: none;
+    }
+  }
+
+  &__title {
+    font-size: 24px;
+    text-align: center;
+    font-weight: bold;
+    width: 100%;
+  }
+
+  &__search {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 600px;
+  }
+
+  &__group {
+    padding: 0;
+    background-color: transparent;
+    box-shadow: none;
+    border-radius: 0;
+
+    h3 {
+      font-size: 20px;
+      font-weight: 500;
+      color: vars.$text-color;
+      padding: 0 vars.$spacing-s;
+    }
+  }
+
+  &__table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: vars.$white-color;
+    box-shadow: vars.$elevation-2;
+    border-radius: vars.$border-radius;
+    overflow: hidden;
+
+    th {
+      background-color: color.scale(vars.$secondary-color, $lightness: 85%);
+      font-weight: 600;
+      color: vars.$text-color;
+      padding: vars.$spacing-s vars.$spacing-m;
+      text-align: left;
+
+      &:nth-child(7) {
+        text-align: center;
+        width: 20%;
+      }
+    }
+
+    td {
+      padding: vars.$spacing-s vars.$spacing-m;
+      border-bottom: 1px solid color.adjust(vars.$background-color, $lightness: -10%);
+      color: vars.$text-color;
+
+      &:nth-child(7) {
+        text-align: right;
+      }
+    }
+
+    tr:nth-child(odd) {
+      background-color: vars.$alternative-rows-color;
+    }
+
+    tr:hover {
+      background-color: color.scale(vars.$secondary-color, $lightness: 75%);
+    }
+
+    td.portfolio__actions {
+      display: flex;
+      justify-content: flex-end;
+      gap: vars.$spacing-s;
+      padding-right: vars.$spacing-m;
+    }
+  }
+
+  &__button {
+    background: none;
+    border: none;
+    padding: 6px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    color: vars.$text-color;
+
+    &--icon:hover {
+      background-color: rgba(0, 0, 0, 0.05);
+    }
+
+    &--danger {
+      color: #c0392b;
+
+      &:hover {
+        background-color: rgba(192, 57, 43, 0.08);
+      }
+    }
+  }
+}

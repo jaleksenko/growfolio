@@ -1,0 +1,28 @@
+// src/styles/components/_messages.scss
+
+@use "../abstracts/variables" as vars;
+
+// Container for all messages
+.message-container {
+  text-align: center;
+  margin-top: vars.$spacing-m; // Use spacing-m from variables
+}
+
+// Base styles for all messages
+.message {
+  font-size: vars.$base-font-size; // Use base font size from variables
+  margin: vars.$spacing-s 0; // Vertical spacing for messages
+  text-align: center;
+
+  &--error {
+    color: vars.$error-color; // Red color for error
+  }
+
+  &--success {
+    color: black; // Override with black color as per your request
+
+    strong {
+      font-weight: bold; // Make email bold in success messages
+    }
+  }
+}
