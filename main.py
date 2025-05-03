@@ -6,6 +6,7 @@ from users.controllers import router as users_router
 from assets.controllers import router as assets_router
 from watchlist.controllers import router as watchlist_router
 from portfolio.controllers import router as portfolio_router
+from ai.controllers import router as ai_router
 
 import logging
 
@@ -43,6 +44,7 @@ app.include_router(users_router)
 app.include_router(assets_router)
 app.include_router(watchlist_router)
 app.include_router(portfolio_router)
+app.include_router(ai_router)
 
 @app.on_event("startup")
 async def on_startup():
